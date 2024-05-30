@@ -1,0 +1,19 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+        <h1>Registrarse</h1>
+        <div>
+            <label>Usuario:</label>
+            <input type="text" id="usuario" formControlName="usuario" required/>
+            <label>Contraseña:</label>
+            <input type="password" formControlName="contra" required/>
+            <label>Aceptar términos</label>
+            <input type="checkbox" formControlName="terminos" required/>
+            <button type="submit" [disabled]="registerForm.invalid">Register</button>
+        </div>
+        <div>
+            <label>¿Ya tienes cuenta? Inicia sesión</label>
+            <button type="button" routerLink="/login">Login</button>
+        </div>
+    </div>
+
+</form>
