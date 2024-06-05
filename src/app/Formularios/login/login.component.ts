@@ -22,7 +22,6 @@ export class LoginComponent {
   onSubmit(){
     const {usuario, contra} = this.loginForm.value;
     if (this.usuarioServicio.validarUsuario(usuario, contra)){
-      this.usuarioServicio.toogleAutenticado();
       this.router.navigate(['/categorias']);
     } else {
       alert('Usuario o contraseña incorrectos');

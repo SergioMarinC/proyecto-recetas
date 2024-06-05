@@ -29,14 +29,21 @@ export class UsuarioService {
    }
 
    //Comprueba si existe el usuario, comprueba los usuarios con el callback
+   //Editado para no usar toogleAutenticado
    validarUsuario(usuario: string, contra: string): boolean{
-    return this.usuarios.some(u => u.usuario === usuario && u.contra === contra);
+    if(this.usuarios.some(u => u.usuario === usuario && u.contra === contra)){
+      this.estaAutenticado = true;
+      return true;
+    } else{
+      return false;
+    }
    }
 
+   /*
    toogleAutenticado(){
     this.estaAutenticado = !this.estaAutenticado;
    }
-
+*/
    getAutenticado(): boolean{
     return this.estaAutenticado;
    }
